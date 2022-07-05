@@ -57,11 +57,11 @@ class CardDelivery {
     @Test
     void shouldCardOrderWithInvalidPhone() {
         String planningDate = generateDate(4);
-        $("[placeholder=\"Город\"]").setValue("Москва"); //Ввод  города
+        $("[placeholder=\"Город\"]").setValue("Москва"); //Ввод города
         $("[data-test-id='date'] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE);
         $("[type=\"tel\"]").setValue(planningDate); //дата
         $("[name=\"name\"]").setValue("Иван Иванов");  // Ввод имени и фамилии
-        $("[name=\"phone\"]").setValue("89277614162");  // Ввод  некорректно телефона
+        $("[name=\"phone\"]").setValue("89277614162");  // Ввод некорректно телефона
         $("[data-test-id=\"agreement\"]").click();  // Клик по чекбоксу
         $x("//*[text()=\"Забронировать\"]").click(); // Клик по кнопке забронировать
 
@@ -70,10 +70,10 @@ class CardDelivery {
     @Test
     void shouldCardOrderWithInvalidName() {
         String planningDate = generateDate(5);
-        $("[placeholder=\"Город\"]").setValue("Москва"); //Ввод  города
+        $("[placeholder=\"Город\"]").setValue("Москва"); //Ввод города
         $("[data-test-id='date'] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE);
         $("[type=\"tel\"]").setValue(planningDate); //дата
-        $("[name=\"name\"]").setValue("John Sina№/");  // Ввод  неккоректного имени и фамилии
+        $("[name=\"name\"]").setValue("John Sina№/");  // Ввод неккоректного имени и фамилии
         $("[name=\"phone\"]").setValue("+79277614162");  // Ввод телефона
         $("[data-test-id=\"agreement\"]").click();  // Клик по чекбоксу
         $x("//*[text()=\"Забронировать\"]").click(); // Клик по кнопке забронировать
@@ -82,10 +82,10 @@ class CardDelivery {
     }
 
     @Test
-    void shouldCardOrderWithLetterЁInName() {
+    void shouldCardOrderWithLetterInName() {
         $("[placeholder=\"Город\"]").setValue("Москва"); //Ввод города
         $("[type=\"tel\"]").setValue("planningDate"); //дата
-        $("[name=\"name\"]").setValue("Калёнов Андрей");  // Ввод имени и фамилии
+        $("[name=\"name\"]").setValue("Дёмин Сергей");  // Ввод имени и фамилии
         $("[name=\"phone\"]").setValue("+79277614162");  // Ввод телефона
         $("[data-test-id=\"agreement\"]").click();  // Клик по чекбоксу
         $x("//*[text()=\"Забронировать\"]").click(); // Клик по кнопке забронировать
@@ -94,9 +94,9 @@ class CardDelivery {
 
 
     @Test
-    void shouldCardOrderWithInvaliData() {
+    void shouldCardOrderWithInvalidData() {
         String planningDate = generateDate(2);
-        $("[placeholder=\"Город\"]").setValue("Москва"); //Ввод  города
+        $("[placeholder=\"Город\"]").setValue("Москва"); //Ввод города
         $("[data-test-id='date'] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE);
         $("[data-test-id='date'] input").setValue(planningDate); //дата
         $("[name=\"name\"]").setValue("Иван Иванов");  // Ввод имени и фамилии
@@ -109,10 +109,10 @@ class CardDelivery {
     @Test
     void shouldCardOrderWithInvalidCheckBox() {
         String planningDate = generateDate(10);
-        $("[placeholder=\"Город\"]").setValue("Москва"); //Ввод  города
+        $("[placeholder=\"Город\"]").setValue("Москва"); //Ввод города
         $("[data-test-id='date'] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE);
         $("[type=\"tel\"]").setValue(planningDate); //дата
-        $("[name=\"name\"]").setValue("Иван Иванов");  // Ввод  неккоректного имени и фамилии
+        $("[name=\"name\"]").setValue("Иван Иванов");  // Ввод неккоректного имени и фамилии
         $("[name=\"phone\"]").setValue("+79277614162");  // Ввод телефона
         $("[data-test-id=\"agreement\"]"); //  НЕ кликать по чекбоксу
         $x("//*[text()=\"Забронировать\"]").click(); // Клик по кнопке забронировать
