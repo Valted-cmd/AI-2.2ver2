@@ -85,7 +85,7 @@ class CardDelivery {
     void shouldCardOrderWithLetterInName() {
         $("[placeholder=\"Город\"]").setValue("Москва"); //Ввод города
         $("[type=\"tel\"]").setValue("planningDate"); //дата
-        $("[name=\"name\"]").setValue("Дёмин Сергей");  // Ввод имени и фамилии
+        $("[name=\"name\"]").setValue("Демин Сергей");  // Ввод имени и фамилии
         $("[name=\"phone\"]").setValue("+79277614162");  // Ввод телефона
         $("[data-test-id=\"agreement\"]").click();  // Клик по чекбоксу
         $x("//*[text()=\"Забронировать\"]").click(); // Клик по кнопке забронировать
